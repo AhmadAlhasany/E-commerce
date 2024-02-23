@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'Your Font';
+    src: url('./images/font/static/KumbhSans-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+  }  
+  @font-face {
+    font-family: 'Your Font';
+    src: url('./images/font/static/KumbhSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@layer {
+    html{
+      @apply text-black bg-white font-kumbh min-h-screen
+    }
+    #root{
+      @apply min-w-[100%] min-h-screen bg-white relative
+    }
 }
