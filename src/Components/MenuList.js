@@ -12,7 +12,7 @@ function MenuList({menuOpen, setMenuOpen}) {
         onClick={() => setMenuOpen(false)}
         className="h-4 mb-8 hover:cursor-pointer hover:scale-110"
         ></img>
-        <ul>
+        <ul className='select-none'>
         <li className="font-bold  text-[16px] mb-3 hover:cursor-pointer">
             Collections
         </li>
