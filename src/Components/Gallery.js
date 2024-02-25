@@ -10,13 +10,14 @@ import shoe4 from "../images/image-product-4.jpg";
 import next from "../images/icon-next.svg";
 import previous from "../images/icon-previous.svg";
 
-function Gallery({number, setNumber, open, setOpen,a}) {
+function Gallery({number, setNumber, open, setOpen,a, width}) {
 
+  console.log(width)
   return (
     <div className=" h-fit md:w-max z-0 md:ml-2">
         <div className="w-[100%] h-[100%] md:max-w-[400px] md:max-h-[400px] relative">
             <img src={previous} onClick={()=>setNumber((number+3)%4)} className="absolute left-1 top-[50%] translate-y-[-50%] bg-white p-4 py-[13.5px] rounded-full hover:cursor-pointer hover:opacity-90 hover:border-2 border-orange sm:left-4 md:hidden"></img>
-            <img src = {a[number]} onClick={()=> setOpen(true)} className="bg-contain w-[100%] h-[100%] md:h-[400px] md:w-[400px] md:rounded-lg md:hover:cursor-pointer"></img>
+            <img src = {a[number]} onClick={()=> setOpen(pre => { return (width > 768) ? true: false})} className="bg-contain w-[100%] h-[100%] md:h-[400px] md:w-[400px] md:rounded-lg md:hover:cursor-pointer"></img>
             <img src={next} onClick={()=>setNumber((number+1)%4)} className="absolute right-1 top-[50%] translate-y-[-50%] bg-white p-4 py-[13.5px] rounded-full hover:cursor-pointer hover:opacity-90 hover:border-2 border-orange sm:right-4 md:hidden"></img>
         </div>
 

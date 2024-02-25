@@ -30,9 +30,11 @@ export default function App() {
   let [product, setProduct] = React.useState({});
   let [productAlias, setProductAlias] = React.useState({});
   let [open, setOpen] = React.useState(false);
-
+  let [width, setWidth] = React.useState(window.innerWidth);
+  
   React.useEffect(()=>{
     const handleresize = ()=>{
+      setWidth(window.innerWidth)
       if(window.innerWidth < 768)
         setOpen(false)
     }
@@ -50,7 +52,7 @@ export default function App() {
       <CartList cartOpen = {cartOpen} productAlias={productAlias} setProduct={setProduct} setProductAlias={setProductAlias}/>
       <div className="md:w-screen md:justify-center md:items-center md:flex">
         <div className="flex width-[100%] h-max mt-[50px] flex-col md:flex-row md:items-center md:mt-40 md:justify-between md:w-[1050px]">
-          <Gallery number={number} setNumber={setNumber} open={open} setOpen={setOpen} a={a}/>
+          <Gallery number={number} setNumber={setNumber} open={open} setOpen={setOpen} a={a} width={width}/>
           <Describtion product={product} setProduct={setProduct} setProductAlias={setProductAlias}/>
         </div>
       </div>
